@@ -1,0 +1,27 @@
+{
+    "name": "Get My Yahoo coupons!",
+    "version": "0.0.1",
+    "background": {
+        "scripts": ["bg.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "matches": ["https://tw.buy.yahoo.com/coupons*"],
+            "js": ["get_coupons.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "https://tw.buy.yahoo.com/coupons*",
+        "background",
+        "storage"
+    ],
+    "browser_action": {
+        "default_title": "自動抓一波了啦",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+  }
+  

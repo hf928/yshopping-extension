@@ -1,0 +1,18 @@
+{
+  "name": "obtained_yahoo_coupons_automatically",
+  "version": "0.0.1",
+  "description": "888 Helper",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack --production"
+  },
+  "author": "haofu",
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
