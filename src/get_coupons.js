@@ -3,7 +3,7 @@ require('@babel/polyfill');
 const env = chrome || browser;
 
 // 整點為基準，開始/結束刷新的時間 (分鐘)
-const refleshMinuteOffest = 2;
+const refreshMinuteOffset = 2;
 // 頁面捲動間隔時間 (毫秒)
 const scrollingDelay = 50;
 // 頁面捲動次數
@@ -28,18 +28,18 @@ env.runtime.onMessage.addListener((msg) => {
         
                 const curMinute = new Date().getMinutes();
                 
-                // 在每個整點前後 {refleshMinuteOffest} 分鐘刷新找 coupons
-                if (curMinute >= (60 - refleshMinuteOffest) || curMinute <= refleshMinuteOffest) {
+                // 在每個整點前後 {refreshMinuteOffset} 分鐘刷新找 coupons
+                if (curMinute >= (60 - refreshMinuteOffset) || curMinute <= refreshMinuteOffset) {
 
                     loadNewCoupons();
 
                 }
-                // 或者設個計時器，整點前 {refleshMinuteOffest} 分鐘刷新
+                // 或者設個計時器，整點前 {refreshMinuteOffset} 分鐘刷新
                 else {
 
                     // 剩餘時間 = 刷新開始時間 (分鐘) - 現在時間 (分鐘)
                     // 分鐘轉成毫秒
-                    const timeLeft = ((60 - refleshMinuteOffest) - curMinute) * 60 * 1000;
+                    const timeLeft = ((60 - refreshMinuteOffset) - curMinute) * 60 * 1000;
 
                     setTimeout(() => {
 
